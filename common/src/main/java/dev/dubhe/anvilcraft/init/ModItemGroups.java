@@ -16,6 +16,10 @@ public class ModItemGroups {
                 entries.accept(ModItems.GEODE.get().getDefaultInstance());
                 entries.accept(ModItems.AMETHYST_PICKAXE.get().getDefaultInstance());
                 entries.accept(ModItems.ROYAL_STEEL_PICKAXE.get().getDefaultInstance());
+                entries.accept(ModItems.ROYAL_STEEL_AXE.get().getDefaultInstance());
+                entries.accept(ModItems.ROYAL_STEEL_SHOVEL.get().getDefaultInstance());
+                entries.accept(ModItems.ROYAL_STEEL_HOE.get().getDefaultInstance());
+                entries.accept(ModItems.ROYAL_STEEL_SWORD.get().getDefaultInstance());
                 entries.accept(ModItems.ANVIL_HAMMER.get().getDefaultInstance());
                 entries.accept(ModItems.CREAM.get().getDefaultInstance());
                 entries.accept(ModItems.FLOUR.get().getDefaultInstance());
@@ -39,6 +43,10 @@ public class ModItemGroups {
                 entries.accept(ModItems.SAPPHIRE.get().getDefaultInstance());
                 entries.accept(ModItems.RESIN.get().getDefaultInstance());
                 entries.accept(ModItems.AMBER.get().getDefaultInstance());
+                entries.accept(ModItems.HARDEND_RESIN.get().getDefaultInstance());
+                entries.accept(ModItems.WOOD_FIBER.get().getDefaultInstance());
+                entries.accept(ModItems.PULP.get().getDefaultInstance());
+                entries.accept(ModItems.CIRCUIT_BOARD.get().getDefaultInstance());
                 entries.accept(ModItems.SPONGE_GEMMULE.get().getDefaultInstance());
                 entries.accept(ModItems.SEA_HEART_SHELL_SHARD.get().getDefaultInstance());
                 entries.accept(ModItems.SEA_HEART_SHELL.get().getDefaultInstance());
@@ -47,6 +55,10 @@ public class ModItemGroups {
                 entries.accept(ModItems.COCOA_LIQUOR.get().getDefaultInstance());
                 entries.accept(ModItems.COCOA_BUTTER.get().getDefaultInstance());
                 entries.accept(ModItems.COCOA_POWDER.get().getDefaultInstance());
+                entries.accept(ModItems.CAPACITOR.get().getDefaultInstance());
+                entries.accept(ModItems.CAPACITOR_EMPTY.get().getDefaultInstance());
+                entries.accept(ModItems.MAGNETOELECTRIC_CORE.get().getDefaultInstance());
+                entries.accept(ModItems.CRAB_CLAW.asStack());
             })
             .build()
         )
@@ -67,6 +79,9 @@ public class ModItemGroups {
                 entries.accept(ModBlocks.ROYAL_ANVIL.asStack());
                 entries.accept(ModBlocks.ROYAL_GRINDSTONE.asStack());
                 entries.accept(ModBlocks.ROYAL_SMITHING_TABLE.asStack());
+                entries.accept(ModBlocks.CREATIVE_GENERATOR.asStack());
+                entries.accept(ModBlocks.HEATER.asStack());
+                entries.accept(ModBlocks.TRANSMISSION_POLE.asStack());
                 entries.accept(ModBlocks.MAGNET_BLOCK.asStack());
                 entries.accept(ModBlocks.HOLLOW_MAGNET_BLOCK.asStack());
                 entries.accept(ModBlocks.FERRITE_CORE_MAGNET_BLOCK.asStack());
@@ -83,6 +98,10 @@ public class ModItemGroups {
                 entries.accept(ModBlocks.SAPPHIRE_BLOCK.asStack());
                 entries.accept(ModBlocks.RESIN_BLOCK.asStack());
                 entries.accept(ModBlocks.AMBER_BLOCK.asStack());
+                entries.accept(ModBlocks.CRAB_TRAP.asStack());
+                entries.accept(ModBlocks.CINERITE.asStack());
+                entries.accept(ModBlocks.QUARTZ_SAND.asStack());
+                entries.accept(ModBlocks.TEMPERING_GLASS.asStack());
             })
             .build()
         )

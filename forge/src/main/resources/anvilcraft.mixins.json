@@ -7,7 +7,9 @@
     "CraftingHelperMixin",
     "FallingBlockEntityMixin",
     "LightningBoltMixin",
-    "MinecraftServerMixin"
+    "MinecraftServerMixin",
+    "LevelChunkMixin",
+    "PistonMovingBlockEntityMixin"
   ],
   "client": [
   ],

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "overload=false": {
+      "model": "anvilcraft:block/heater_lit"
+    },
+    "overload=true": {
+      "model": "anvilcraft:block/heater"
+    }
+  }
+}

@@ -65,6 +65,20 @@ public class VanillaRecipesLoader {
             .define('B', ModItems.SAPPHIRE)
             .unlockedBy("hasitem", AnvilCraftDatagen.has(ModItems.SEA_HEART_SHELL))
             .save(provider);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CIRCUIT_BOARD)
+                .pattern("BCB")
+                .pattern("AAA")
+                .define('A', ModItems.HARDEND_RESIN)
+                .define('B', Items.COPPER_INGOT)
+                .define('C', Items.QUARTZ)
+                .unlockedBy("hasitem", AnvilCraftDatagen.has(ModItems.HARDEND_RESIN))
+                .save(provider);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.WET_SPONGE)
+                .pattern("AA")
+                .pattern("AA")
+                .define('A', ModItems.SPONGE_GEMMULE)
+                .unlockedBy("hasitem", AnvilCraftDatagen.has(ModItems.SPONGE_GEMMULE))
+                .save(provider);
 
         SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ModItemTags.DOUGH), RecipeCategory.FOOD,
                 Items.BREAD, 0.35f, 600)
@@ -78,6 +92,19 @@ public class VanillaRecipesLoader {
                 Items.BREAD, 0.35f, 600, RecipeSerializer.SMOKING_RECIPE)
             .unlockedBy(AnvilCraftDatagen.hasItem(ModItems.DOUGH.get()), AnvilCraftDatagen.has(ModItems.DOUGH))
             .save(provider, AnvilCraft.of("generic_cooking_bread"));
+
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ModItemTags.DOUGH_FORGE), RecipeCategory.FOOD,
+                Items.BREAD, 0.35f, 600)
+            .unlockedBy(AnvilCraftDatagen.hasItem(ModItems.DOUGH.get()), AnvilCraftDatagen.has(ModItems.DOUGH))
+            .save(provider, AnvilCraft.of("campfire_cooking_bread_forge"));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ModItemTags.DOUGH_FORGE), RecipeCategory.FOOD,
+                Items.BREAD, 0.35f, 100)
+            .unlockedBy(AnvilCraftDatagen.hasItem(ModItems.DOUGH.get()), AnvilCraftDatagen.has(ModItems.DOUGH))
+            .save(provider, AnvilCraft.of("smoking_bread_forge"));
+        SimpleCookingRecipeBuilder.generic(Ingredient.of(ModItemTags.DOUGH_FORGE), RecipeCategory.FOOD,
+                Items.BREAD, 0.35f, 600, RecipeSerializer.SMOKING_RECIPE)
+            .unlockedBy(AnvilCraftDatagen.hasItem(ModItems.DOUGH.get()), AnvilCraftDatagen.has(ModItems.DOUGH))
+            .save(provider, AnvilCraft.of("generic_cooking_bread_forge"));
 
         VanillaRecipeProvider.stonecutterResultFromBase(provider, RecipeCategory.BUILDING_BLOCKS,
             ModBlocks.CUT_ROYAL_STEEL_STAIRS, ModBlocks.CUT_ROYAL_STEEL_BLOCK);
@@ -98,6 +125,30 @@ public class VanillaRecipesLoader {
             .unlocks(AnvilCraftDatagen.hasItem(ModItems.AMETHYST_PICKAXE.asItem()),
                 AnvilCraftDatagen.has(ModItems.AMETHYST_PICKAXE))
             .save(provider, AnvilCraft.of("smithing/royal_steel_pickaxe"));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(ModItems.ROYAL_STEEL_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(ModItemTags.ROYAL_STEEL_AXE_BASE), Ingredient.of(ModItems.ROYAL_STEEL_INGOT.get()),
+                RecipeCategory.TOOLS, ModItems.ROYAL_STEEL_AXE.get())
+            .unlocks(AnvilCraftDatagen.hasItem(ModItems.AMETHYST_AXE.asItem()),
+                AnvilCraftDatagen.has(ModItems.AMETHYST_AXE))
+            .save(provider, AnvilCraft.of("smithing/royal_steel_axe"));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(ModItems.ROYAL_STEEL_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(ModItemTags.ROYAL_STEEL_HOE_BASE), Ingredient.of(ModItems.ROYAL_STEEL_INGOT.get()),
+                RecipeCategory.TOOLS, ModItems.ROYAL_STEEL_HOE.get())
+            .unlocks(AnvilCraftDatagen.hasItem(ModItems.AMETHYST_HOE.asItem()),
+                AnvilCraftDatagen.has(ModItems.AMETHYST_HOE))
+            .save(provider, AnvilCraft.of("smithing/royal_steel_hoe"));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(ModItems.ROYAL_STEEL_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(ModItemTags.ROYAL_STEEL_SHOVEL_BASE), Ingredient.of(ModItems.ROYAL_STEEL_INGOT.get()),
+                RecipeCategory.TOOLS, ModItems.ROYAL_STEEL_SHOVEL.get())
+            .unlocks(AnvilCraftDatagen.hasItem(ModItems.AMETHYST_SHOVEL.asItem()),
+                AnvilCraftDatagen.has(ModItems.AMETHYST_SHOVEL))
+            .save(provider, AnvilCraft.of("smithing/royal_steel_shovel"));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(ModItems.ROYAL_STEEL_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(ModItemTags.ROYAL_STEEL_SWORD_BASE), Ingredient.of(ModItems.ROYAL_STEEL_INGOT.get()),
+                RecipeCategory.TOOLS, ModItems.ROYAL_STEEL_SWORD.get())
+            .unlocks(AnvilCraftDatagen.hasItem(ModItems.AMETHYST_SWORD.asItem()),
+                AnvilCraftDatagen.has(ModItems.AMETHYST_SWORD))
+            .save(provider, AnvilCraft.of("smithing/royal_steel_sword"));
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(), Ingredient.of(Items.GRINDSTONE),
                 Ingredient.of(ModBlocks.ROYAL_STEEL_BLOCK), RecipeCategory.TOOLS, ModBlocks.ROYAL_GRINDSTONE.asItem())
             .unlocks(AnvilCraftDatagen.hasItem(ModBlocks.ROYAL_STEEL_BLOCK.asItem()),

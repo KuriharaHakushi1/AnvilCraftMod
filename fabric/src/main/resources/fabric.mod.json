@@ -4,23 +4,24 @@
   "version": "${version}",
 
   "name": "${mod_name}",
-  "description": "${mod_description}",
+  "description": "${mod_description}\n\nContributors:\n${contributors}\n\nSupporter:\n${supporters}\n- and more...",
   "authors": [
     "Gugle",
     "XeKr"
   ],
   "contact": {
-    "website": "https://anc.dubhe.dev/",
-    "repo": "https://github.com/Gu-ZT/AnvilCraft"
+    "homepage": "https://anc.dubhe.dev/",
+    "sources": "https://github.com/Anvil-Dev/AnvilCraft",
+    "issues": "https://github.com/Anvil-Dev/AnvilCraft/issues"
   },
 
   "license": "${mod_license}",
-  "icon": "assets/anvilcraft/textures/icon.png",
+  "icon": "pack.png",
 
   "environment": "*",
   "entrypoints": {
     "client": [
-      "dev.dubhe.anvilcraft.client.fabric.AnvilCraftClient"
+      "dev.dubhe.anvilcraft.client.fabric.AnvilCraftFabricClient"
     ],
     "main": [
       "dev.dubhe.anvilcraft.fabric.AnvilCraftFabric"
@@ -30,6 +31,9 @@
     ],
     "modmenu": [
       "dev.dubhe.anvilcraft.integration.AnvilCraftModMenuApiImpl"
+    ],
+    "emi": [
+      "dev.dubhe.anvilcraft.integration.emi.AnvilCraftEmiPlugin"
     ]
   },
   "mixins": [

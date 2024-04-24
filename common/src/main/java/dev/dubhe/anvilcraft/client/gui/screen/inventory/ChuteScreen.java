@@ -20,7 +20,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.BiFunction;
 
 public class ChuteScreen extends BaseMachineScreen<ChuteMenu> implements IFilterScreen {
-    private static final ResourceLocation CONTAINER_LOCATION = AnvilCraft.of("textures/gui/container/chute.png");
+    private static final ResourceLocation CONTAINER_LOCATION =
+        AnvilCraft.of("textures/gui/container/machine/background/chute.png");
 
 
     BiFunction<Integer, Integer, EnableFilterButton> enableFilterButtonSupplier = this
@@ -53,6 +54,21 @@ public class ChuteScreen extends BaseMachineScreen<ChuteMenu> implements IFilter
     public void renderSlot(@NotNull GuiGraphics guiGraphics, @NotNull Slot slot) {
         super.renderSlot(guiGraphics, slot);
         IFilterScreen.super.renderSlot(guiGraphics, slot);
+    }
+
+    @Override
+    protected void renderTooltip(@NotNull GuiGraphics guiGraphics, int x, int y) {
+        super.renderTooltip(guiGraphics, x, y);
+        this.renderSlotTooltip(guiGraphics, x, y);
+    }
+
+    protected void renderSlotTooltip(@NotNull GuiGraphics guiGraphics, int x, int y) {
+        if (this.hoveredSlot == null) return;
+        if (!(this.hoveredSlot instanceof ItemDepositorySlot)) return;
+        if (!((ItemDepositorySlot) this.hoveredSlot).isFilter()) return;
+        if (!this.isFilterEnabled()) return;
+        if (!this.isSlotDisabled(this.hoveredSlot.getContainerSlot())) return;
+        guiGraphics.renderTooltip(this.font, Component.translatable("screen.anvilcraft.slot.disable.tooltip"), x, y);
     }
 
     @Override

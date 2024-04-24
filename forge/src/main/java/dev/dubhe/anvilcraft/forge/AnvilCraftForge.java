@@ -4,6 +4,7 @@ import dev.dubhe.anvilcraft.AnvilCraft;
 import dev.dubhe.anvilcraft.config.AnvilCraftConfig;
 import dev.dubhe.anvilcraft.init.ModCommands;
 import dev.dubhe.anvilcraft.init.forge.ModRecipeTypesForge;
+import dev.dubhe.anvilcraft.init.forge.ModVillagers;
 import dev.dubhe.anvilcraft.util.IBlockHighlightUtil;
 import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.client.Minecraft;
@@ -26,6 +27,7 @@ public class AnvilCraftForge {
     public AnvilCraftForge() {
         AnvilCraft.init();
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModVillagers.register(bus);
         bus.addListener(ModRecipeTypesForge::register);
 
         MinecraftForge.EVENT_BUS.addListener(AnvilCraftForge::registerCommand);

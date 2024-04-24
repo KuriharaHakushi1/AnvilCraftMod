@@ -9,9 +9,11 @@ import dev.dubhe.anvilcraft.data.generator.AnvilCraftDatagen;
 import dev.dubhe.anvilcraft.init.ModBlockEntities;
 import dev.dubhe.anvilcraft.init.ModBlocks;
 import dev.dubhe.anvilcraft.init.ModDispenserBehavior;
+import dev.dubhe.anvilcraft.init.ModEntities;
 import dev.dubhe.anvilcraft.init.ModEvents;
 import dev.dubhe.anvilcraft.init.ModItemGroups;
 import dev.dubhe.anvilcraft.init.ModItems;
+import dev.dubhe.anvilcraft.init.ModLootContextParamSet;
 import dev.dubhe.anvilcraft.init.ModMenuTypes;
 import dev.dubhe.anvilcraft.init.ModNetworks;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -40,19 +42,21 @@ public class AnvilCraft {
         // common
         ModEvents.register();
         ModBlocks.register();
+        ModEntities.register();
         ModItems.register();
         ModItemGroups.register();
         ModBlockEntities.register();
         ModMenuTypes.register();
         ModNetworks.register();
         ModDispenserBehavior.register();
+        ModLootContextParamSet.register();
         // datagen
         AnvilCraftDatagen.init();
         // fabric 独有，请在此之前插入注册
         REGISTRATE.registerRegistrate();
     }
 
-    public static @NotNull ResourceLocation of(String id) {
-        return new ResourceLocation(MOD_ID, id);
+    public static @NotNull ResourceLocation of(String path) {
+        return new ResourceLocation(MOD_ID, path);
     }
 }

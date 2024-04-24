@@ -6,7 +6,6 @@
   "mixins": [
     "AbstractCauldronBlockMixin",
     "AnvilBlockMixin",
-    "AxeItemMixin",
     "BeaconMenuMixin",
     "BucketItemMixin",
     "ClientboundUpdateRecipesPacketMixin",
@@ -14,9 +13,16 @@
     "DispenseItemEmptyBucketBehaviorMixin",
     "DispenseItemWaterBottleBehaviorMixin",
     "ItemEntityMixin",
-    "SolidBucketItemMixin"
+    "LivingEntityMixin",
+    "LootContextParamSetsAccessor",
+    "SolidBucketItemMixin",
+    "accessor.BaseSpawnerAccessor",
+    "accessor.FallingBlockEntityAccessor"
   ],
   "client": [
+    "LevelRendererMixin",
+    "accessor.ItemInHandRendererAccessor",
+    "accessor.MinecraftAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
